@@ -31,7 +31,7 @@ inference/
     ├── stable-diffusion-inpainting/
 ```
 
-## Dataset Prepare
+## Dataset Preparation
 
 ### iHarmony4
 
@@ -113,8 +113,6 @@ For detailed training options and configurations, see `train_control.py`.
 
 The VAE is initialized with weights from Stable Diffusion. Please download the pretrained VAE weights from [here](https://huggingface.co/1243asdad/region2region/blob/main/sd_vae.ckpt) and place them in the `./ckpt` directory.
 
-
-
 ```bash
 python train_VAE.py
 ```
@@ -134,6 +132,13 @@ python convert.py  --ckpt_path *** --save_path *** --vae_path *** --vae_save_pat
 The `convert.py` provides weight conversion for the core components (e.g., ControlNet, clear-VAE). 
 However, you still need to download the remaining weights (e.g., safety_checker) from [here](https://huggingface.co/1243asdad/region2region/tree/main/stable-diffusion-inpainting).
 
+## VAE inference
+
+Download our pretrained Clear-VAE checkpoint (Stable Diffusion format) from [here](https://huggingface.co/1243asdad/region2region/blob/main/clear_vae.ckpt), modify the ckpt_path in `configs/vae.yaml`, and then run:
+
+```bash
+python infer_VAE.py
+```
 
 
 ## Acknowledgements
