@@ -1,0 +1,63 @@
+Train:
+
+# If any issues arise (e.g., file not found), try using absolute paths instead of relative ones.
+
+  HAdobe5k:
+    image_dir: data/iHarmony4/HAdobe5k/composite_images
+    mode: train
+  HCOCO:
+    image_dir: data/iHarmony4/HCOCO/composite_images
+    mode: train
+  Hday2night:
+    image_dir: data/iHarmony4/Hday2night/composite_images
+    mode: train
+  HFlickr:
+    image_dir: data/iHarmony4/HFlickr/composite_images
+    mode: train
+
+  iHarmony4:
+    split: train
+    opt:
+      random_flip: True
+      random_crop: True
+      mask_dilate: False
+      dataset_root: data/iHarmony4
+      train_file: train.jsonl
+
+
+  RPH:
+    split: train
+    opt:
+      random_flip: True
+      random_crop: True
+      mask_dilate: False
+      dataset_root: data/RPHarmony
+      train_file: train.jsonl
+
+  CC:
+    split: train
+    opt:
+      random_flip: True
+      random_crop: True
+      mask_dilate: False
+      dataset_root: data/ccHarmony
+      train_file: train.jsonl
+
+
+Test:
+
+  HAdobe5k:
+    image_dir: data/iHarmony4/HAdobe5k/composite_images
+    mode: test
+  HCOCO:
+    image_dir: data/iHarmony4/HCOCO/composite_images
+    mode: test
+  Hday2night:
+    image_dir: data/iHarmony4/Hday2night/composite_images
+    mode: test
+  HFlickr:
+    image_dir: data/iHarmony4/HFlickr/composite_images
+    mode: test
+
+
+
