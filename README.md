@@ -93,13 +93,13 @@ cd inference
 For using pretrained checkpoints, see the Download Checkpoints section for instructions.  
 
 If you use the weights obtained from training, please run `convert.py` to convert them from Stable Diffusion (SD) format to Diffusers format.  
-The `convert.py` provides weight conversion for the core components (e.g., ControlNet, clear-VAE). For parameter settings, please refer to the convert.py script.
+For parameter settings, please refer to the `convert.py`.
 
 ```bash
 python convert.py  --ckpt_path *** --save_path *** --vae_path *** --vae_save_path ***
 ```
 
- 
+The `convert.py` provides weight conversion for the core components (e.g., ControlNet, clear-VAE). 
 However, you still need to download the remaining weights (e.g., safety_checker) from [here]().
 
 Test the model performance on the iHarmony4 dataset:
