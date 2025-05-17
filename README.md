@@ -116,10 +116,11 @@ For detailed training options and configurations, see `train_VAE.py`.
 
 ## Model weights convert
 
-If you use the weights obtained from training, please run `convert.py` to convert them from Stable Diffusion (SD) format to Diffusers format.  
+If you use the weights obtained from training, please run `inference/convert.py` to convert them from Stable Diffusion (SD) format to Diffusers format.  
 For parameter settings, please refer to the `convert.py`.
 
 ```bash
+cd inference
 python convert.py  --ckpt_path *** --save_path *** --vae_path *** --vae_save_path ***
 ```
 
