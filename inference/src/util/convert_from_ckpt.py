@@ -646,13 +646,12 @@ def convert_ldm_unet_checkpoint(
         def pop_key_if_exists(state_dict, key):
             if key in state_dict:
                 return state_dict.pop(key)
-            return None  # 或者返回一个默认值，取决于你的需求
+            return None 
 
         pcca_index = 0
 
         while pcca_index < 4:
 
-            # 使用封装后的函数
             new_checkpoint[f'PCCAs.{pcca_index}.mlp.0.weight'] = pop_key_if_exists(unet_state_dict,
                                                                                    f'PCCAs.{pcca_index}.mlp.0.weight')
             new_checkpoint[f'PCCAs.{pcca_index}.mlp.2.weight'] = pop_key_if_exists(unet_state_dict,
