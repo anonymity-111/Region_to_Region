@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ## Download Checkpoints
 
-Download model checkpoint: [here](https://www.alipan.com/s/rN6WSPckvHV)
+Download model checkpoint: [here](https://huggingface.co/1243asdad/region2region/tree/main/stable-diffusion-inpainting)
 
 
 ## Dataset Prepare
@@ -25,10 +25,20 @@ Download model checkpoint: [here](https://www.alipan.com/s/rN6WSPckvHV)
 ### iHarmony4
 
 Please refer to the [DiffHarmony](https://github.com/nicecv/DiffHarmony) to prepare data.
+Place the iHarmony4 dataset inside the data folder, forming the following structure:
+
+```shell
+data/
+└── iHarmony4/
+    ├── HAdobe5k/
+    ├── HCOCO/
+    ├── HFlickr/
+    └── Hday2night/
+```
 
 ### RPHarmony
 
-Please download it from [here](https://www.alipan.com/s/fYFLnP8LiSo) and place it under the data folder.
+Please download it from [here](https://huggingface.co/1243asdad/region2region/blob/main/RPHarmony.zip) and place it under the data folder.
 Make sure the structure is just like that:
 
 ```shell
@@ -50,7 +60,7 @@ The implementation of Poisson Blending is based on [pytorch-poisson-image-editin
 
 ## Train
 
-Please download the pretrained model weights from [here] and place them in the `./ckpt` directory.  
+Please download the pretrained model weights from [here](https://huggingface.co/1243asdad/region2region/blob/main/diff-base.ckpt) and place them in the `./ckpt` directory.  Alternatively, you can manually convert the weights using the `tool_add_control.py`
 
 These weights are converted from the U-Net of [DiffHarmony](https://github.com/nicecv/DiffHarmony), and are compatible with ControlNet-style training.  
 
@@ -63,6 +73,9 @@ sh train.sh
 For detailed training options and configurations, see `train_control.py`.
 
 ### Train Clear-VAE
+
+The VAE is initialized with weights from Stable Diffusion. Please download the pretrained VAE weights from [here](https://huggingface.co/1243asdad/region2region/blob/main/sd_vae.ckpt) and place them in the `./ckpt` directory.
+
 
 ```bash
 python train_VAE.py
