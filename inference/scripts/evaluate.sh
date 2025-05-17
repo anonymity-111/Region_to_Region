@@ -1,7 +1,7 @@
 export PYTHONPATH=.:$PYTHONPATH
 
 OUTPUT_DIR="./test"
-DATA_DIR=data/iHarmony4
+DATA_DIR=../data/iHarmony4
 TEST_FILE=test.jsonl
 
 
