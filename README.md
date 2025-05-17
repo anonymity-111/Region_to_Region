@@ -100,7 +100,7 @@ python convert.py  --ckpt_path *** --save_path *** --vae_path *** --vae_save_pat
 ```
 
 The `convert.py` provides weight conversion for the core components (e.g., ControlNet, clear-VAE). 
-However, you still need to download the remaining weights (e.g., safety_checker) from [here]().
+However, you still need to download the remaining weights (e.g., safety_checker) from [here](https://huggingface.co/1243asdad/region2region/tree/main/stable-diffusion-inpainting).
 
 Test the model performance on the iHarmony4 dataset:
 
