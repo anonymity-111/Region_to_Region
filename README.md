@@ -17,8 +17,17 @@ pip install -r requirements.txt
 
 ## Download Checkpoints
 
-Download model checkpoint: [here](https://huggingface.co/1243asdad/region2region/tree/main/stable-diffusion-inpainting)
+Download LDM checkpoint: [here](https://huggingface.co/1243asdad/region2region/tree/main/stable-diffusion-inpainting)
+Download Clear-VAE checkpoint: [here](https://huggingface.co/1243asdad/region2region/tree/main/clear_vae)
 
+Place them under inference/checkpoints. forming the following structure:
+
+```shell
+inference/
+└── checkpoints/
+    ├── clear_vae/
+    ├── stable-diffusion-inpainting/
+```
 
 ## Dataset Prepare
 
@@ -55,14 +64,35 @@ data/RPHarmony
 |- test.txt
 ```
 
-The RPHarmony dataset is built using our proposed Random Poisson Blending method.   
+The RPHarmony dataset is built using our proposed **Random Poisson Blending** method.   
 The implementation of Poisson Blending is based on [pytorch-poisson-image-editing](https://github.com/matt-baugh/pytorch-poisson-image-editing).
+
+## Inference
+
+```bash
+cd inference
+```
+
+For using pretrained checkpoints, see the **Download Checkpoints** section for instructions.  
+
+Test the model performance on the iHarmony4 dataset:
+
+```bash
+sh scripts/inference.sh
+```
+
+To test on other datasets, simply change the parameters in the `inference.sh`.
+You can customize the testing settings by editing the `inference.sh` script.
 
 ## Train
 
-Please download the pretrained model weights from [here](https://huggingface.co/1243asdad/region2region/blob/main/diff-base.ckpt) and place them in the `./ckpt` directory.  Alternatively, you can manually convert the weights using the `tool_add_control.py`
 
-These weights are converted from the U-Net of [DiffHarmony](https://github.com/nicecv/DiffHarmony), and are compatible with ControlNet-style training.  
+
+The weights of our model are derived from [DiffHarmony](https://github.com/nicecv/DiffHarmony).  
+We offer [converted weights](https://huggingface.co/1243asdad/region2region/blob/main/diff-base.ckpt) compatible with ControlNet-style training.  
+
+Please download the pretrained model weights and place them in the `./ckpt` directory. 
+Alternatively, you can manually convert the weights using the `tool_add_control.py` 
 
 Please modify the configuration files in the `./configs`, such as `datasets.yaml`, and then:
 
@@ -84,13 +114,7 @@ python train_VAE.py
 
 For detailed training options and configurations, see `train_VAE.py`.
 
-## Inference
-
-```bash
-cd inference
-```
-
-For using pretrained checkpoints, see the Download Checkpoints section for instructions.  
+## Model weights convert
 
 If you use the weights obtained from training, please run `convert.py` to convert them from Stable Diffusion (SD) format to Diffusers format.  
 For parameter settings, please refer to the `convert.py`.
@@ -102,15 +126,6 @@ python convert.py  --ckpt_path *** --save_path *** --vae_path *** --vae_save_pat
 The `convert.py` provides weight conversion for the core components (e.g., ControlNet, clear-VAE). 
 However, you still need to download the remaining weights (e.g., safety_checker) from [here](https://huggingface.co/1243asdad/region2region/tree/main/stable-diffusion-inpainting).
 
-Test the model performance on the iHarmony4 dataset:
-
-```bash
-sh scripts/inference.sh
-```
-
-To test on other datasets, simply change the parameters in the `inference.sh`.
-
-You can customize the testing settings by editing the `inference.sh` script.
 
 
 ## Acknowledgements
