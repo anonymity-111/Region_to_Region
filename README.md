@@ -19,7 +19,7 @@ conda env create -f environment.yml
 
 ## Download Checkpoints
 
-Download LDM checkpoint: [here](https://huggingface.co/1243asdad/region2region/tree/main/stable-diffusion-inpainting)
+Download LDM checkpoint: [here](https://huggingface.co/1243asdad/region2region/tree/main/stable-diffusion-inpainting)  
 Download Clear-VAE checkpoint: [here](https://huggingface.co/1243asdad/region2region/tree/main/clear_vae)
 
 Place them under `inference/checkpoints`. forming the following structure:
