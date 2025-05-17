@@ -10,11 +10,9 @@ Official implementation of the paper **"Region-to-Region: Enhancing Generative I
 
 ## Installation
 ```bash
-conda create -n r2r python=3.10
-conda activate r2r
 cd Region_to_Region
-conda env create -f environment.yml
-# pip install -r requirements.txt
+conda env create -f environment.yml -n r2r
+conda activate r2r
 ```
 
 ## Download Checkpoints
