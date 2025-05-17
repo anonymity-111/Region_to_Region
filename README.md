@@ -39,12 +39,17 @@ Please refer to the [DiffHarmony](https://github.com/nicecv/DiffHarmony) to prep
 Place the iHarmony4 dataset inside the data folder, forming the following structure:
 
 ```shell
-data/
-└── iHarmony4/
-    ├── HAdobe5k/
-    ├── HCOCO/
-    ├── HFlickr/
-    └── Hday2night/
+data/iHarmony4
+|- HAdobe5k/
+    |- composite_images
+    |- masks
+    |- real_images
+    |- ...
+|- HCOCO/
+|- HFlickr/
+|- Hday2night/
+|- train.jsonl
+|- test.jsonl
 ```
 
 ### RPHarmony
