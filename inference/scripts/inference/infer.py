@@ -282,7 +282,7 @@ def main(args):
                 mask_image=eval_mask_images,
                 height=args.resolution,
                 width=args.resolution,
-                num_inference_steps=5,
+                num_inference_steps=10,
                 guidance_scale=1.0,
                 generator=generator,
                 output_type="pt",
