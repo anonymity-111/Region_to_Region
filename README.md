@@ -5,6 +5,7 @@ Official implementation of the paper **"Region-to-Region: Enhancing Generative I
 **Note**: 
 1. This repository is released solely for **anonymous review purposes**. The paper is currently under review.   
 2. To ensure a **double-blind** review process, the issue section has been disabled during the review period.
+3. All download links are anonymous.
 
 ---
 
