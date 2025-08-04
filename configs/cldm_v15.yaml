@@ -20,7 +20,7 @@ model:
     cond_input_channels: 3
 
     iscontrol: True  # add controlnet
-    stage1: True     # train unet only
+    stage1: False     # train unet only
 
     control_stage_config:
       target: cldm.cldm.ControlNet_CA
