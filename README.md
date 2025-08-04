@@ -140,4 +140,5 @@ python infer_VAE.py
 
 
 ## Acknowledgements
-This project is developped on the codebase of [ControlNet](https://github.com/lllyasviel/ControlNet), [AnyDoor](https://github.com/ali-vilab/AnyDoor), [DiffHarmony](https://github.com/nicecv/DiffHarmony) and [FinetuneVAE-SD](https://github.com/Leminhbinh0209/FinetuneVAE-SD). We appreciate these great work! 
+This project is developped on the codebase of [ControlNet](https://github.com/lllyasviel/ControlNet), [AnyDoor](https://github.com/ali-vilab/AnyDoor), [DiffHarmony](https://github.com/nicecv/DiffHarmony), [FinetuneVAE-SD](https://github.com/Leminhbinh0209/FinetuneVAE-SD) and [pytorch-poisson-image-editing](https://github.com/matt-baugh/pytorch-poisson-image-editing). 
+We appreciate these great work! 
